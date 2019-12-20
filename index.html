@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dictionary of Root and Affixes</title>
+        <style>
+            * 
+            {box-sizing: border-box}
+            html,body{
+                width: 100%;
+                /*height: 100%;*/
+            }
+            body {margin:0;}
+
+            ul.navigation {
+                display: flex;
+                /*flex-direction: row;*/
+                /*flex-wrap: nowrap;*/
+                flex-flow: row nowrap;
+                justify-content: center;
+                /*display: table;*/
+                overflow: hidden;
+                background-color: rgb(62, 62, 62);
+                width: 100%;
+                height: auto;
+                text-align: center;
+                font-size: 0px;
+                box-shadow: 0 0 20px rgb(0, 0, 0,0.2);
+            }
+
+            ul.navigation li {
+                list-style: none;
+                background-image: none;
+                float: left;
+                font-size: 14px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                height: 52px;
+                padding: 14px 0;
+                text-align: center;
+            }
+
+            ul.navigation li a {
+                text-decoration: none;
+                color: white;
+            }
+
+            ul.navigation a:hover{
+                background-color: rgb(129, 129, 129);
+            }
+            /*.itself{
+                border-bottom: white;
+                border-bottom-style: solid;
+                border-width: 4px;
+            }*/
+
+            
+            .title{
+                border:1px none;
+                width: 100%;
+                /*background-color: #ffc60b;*/
+                position: fixed;
+                top: 0;
+                clear: both;
+                z-index: 1;
+            }
+            .background
+            {
+                background-color: rgb(128, 128, 128,0.1);
+                width: 100%;
+                height: auto;
+                padding-bottom: 100px;
+                z-index: -1;
+            }
+            .content
+            {
+                background-color: #FFFFFF;
+                width: 60%;
+                /*height: auto;/*2119%;*/
+                height: auto;
+                padding-bottom: 30px;
+                box-shadow:0 0 20px rgb(0, 0, 0,0.2);
+                position: relative;
+                top: 50px;
+                left:50%; 
+                transform: translate(-50%,0); 
+                z-index: 0;
+            }
+            .sample1{
+                border-left-style: solid;
+                border-width: 8px;
+                border-color: #7EC282;
+                font-size: 22px;
+                font-family: Arial, sans-serif;
+                margin: 30px 90px;
+                color:#7EC282;
+                text-align: left;
+                padding-left: 10px;
+            }
+            .sample2{
+                margin-left:110px;
+                font-size: 16px;
+                color: rgb(0,0,0,0.75);
+                text-align: left;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .sample2-1{
+                font-size: 16px;
+                color: rgb(0,0,0,0.75);
+                text-align: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            .sample2-2{
+                font-size: 16px;
+                color: #7EC282;
+                text-align: center;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                margin: 50px 0;
+            }
+            ul{
+	            list-style-type:none;
+	            padding:0px;
+	            margin:0px;
+            }
+            ul li{
+	            background-image:url(dot.svg);
+	            background-repeat:no-repeat;
+	            background-position:0px 5px; 
+	            padding-left:20px;
+            }
+            ul.case{
+                list-style-type:none;
+	            padding:0px;
+	            margin:0px;
+                position: relative;
+                left: 30px;
+            }
+            ul.case li{
+	            background-image:url(star.svg);
+	            background-repeat:no-repeat;
+	            background-position:0px 2px; 
+	            padding-left:28px;
+                margin-left: 5px;
+            }
+            ol{
+                list-style-type: number;
+            }
+            .sample3{
+                margin-left:110px;
+                margin-right: 110px;
+                font-size: 16px;
+                color: rgb(0,0,0,0.75);
+                text-align:justify;
+                /*text-justify:distribute-all-lines;*/
+                /*保证两端对齐，第三行兼容IE浏览器*/
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                line-height: 24px;
+            }
+            .try{
+                width: 14%;
+                align-content: center;
+                padding: 14px 0;
+            }
+            a.app:link {color:#7EC282;}      /* 未访问链接*/
+            a.app :visited {color:rgb(126, 126, 126);}  /* 已访问链接 */
+            a.app :hover {color:#7EC282;}  /* 鼠标移动到链接上 */
+            a.app :active {color:rgb(126, 126, 126);}  /* 鼠标点击时 */
+            
+
+
+        </style>
+    </head>
+    <body>
+                  
+                  
+        <div class="title">
+                <ul class="navigation">
+                    <a href="https://qingqiuhan.github.io/qingqiuhan.github.io-work1/" style="color: white; width: 14%; text-align: center;">
+                        <li style="width: 100%; font-size: 16;">
+                            <b>Interface&nbsp;Optimization</b>
+                        </li>
+                    </a>
+                    <a href="https://qingqiuhan.github.io/qingqiuhan.github.io-work2/" style="color: white; width: 14%; text-align: center;">
+                        <li style="width: 100%;">
+                            Interaction&nbsp;Design
+                        </li>
+                    </a>
+                    <a href="https://qingqiuhan.github.io/qingqiuhan.github.io-work3/" style="color: white; width: 14%; text-align: center;">
+                        <li style="width: 100%;">
+                            Information&nbsp;Design
+                        </li>
+                    </a>
+                </ul>
+        </div>
+        <div class="background" style="text-align: center;">
+            <div class="content">
+                <img src="cover1.jpg" width="100%">
+                <!--<object data="Cover1.svg" type="image/svg+xml" style="width: 100%; height: 110%;"></object>-->
+                <br>
+<!--Introduction-->
+<p style="margin: 30px 0; text-align: center; color: rgb(62, 62, 62, 0.5); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    ----This page contains many images, please wait a few seconds for loading----</p>                
+<h1 class="sample1">Introduction</h1>
+                <h2 class="sample2">Dictionary of Root and Affixes</h2>
+                <ul class="sample3">
+                    <li>This App is developed by individual developer <i>Weidong Gao</i>. It aims to help English learners quickly understand, memorize or search English words by illustrating and analyzing roots and affixes of words</li>
+                    <br>
+                    <li>In App Store, this App has a high rating (4.9/5.0), and the number of reviews has exceeded 12k, which means it has a wide user base <a class="app" target="_blank" href="https://apps.apple.com/cn/app/%E8%AF%8D%E6%A0%B9%E8%AF%8D%E7%BC%80%E5%AD%97%E5%85%B8-%E6%89%B9%E9%87%8F%E8%83%8C%E5%8D%95%E8%AF%8D/id528178365?l=en">(Click here to see this App in App Store)</a></li>
+                </ul>
+                <br>
+                <br>
+                <img src="work1-1.jpg" width="70%" style="align-content: center; border-radius: 20px; box-shadow: 0 0 20px rgb(0, 0, 0,0.1);">
+                <br>
+                <br>
+                <h2 class="sample2">The original intention of optimization</h2>
+                <ul class="sample3">
+                    <li>Although this app provides a good way for me and other users to learn English, it does not provide a good user experience. When I use it, <span style="color:rgb(250,100,0,0.73)" ><strong>the interfaces of this App sometimes make me confused and disappointed.</strong></span> This also can be seen from some reviews</li>
+                    <br>
+                    <li>I have used many kinds of English Learning Apps, and the method used by this App, which is analyzing roots and affixes, is the most effective one for me. <span style="color:rgb(250,100,0,0.73)" ><strong>Interfaces should not be a hindrance for the promote of this App</strong></span></li>
+                    <br>    
+                    <li>Hoping to contribute to the optimization of the App based on what I have learned, I contacted with Mr. Weidong Gao by WeChat (He left his WeChat account in this APP) and told him I wanted to provide a optimization plan for this App. He was pleased and then our cooperation started. This project is processing</li>
+                </ul>
+                <br>
+                <h2 class="sample2">Optimization principle</h2>
+                <ul class="sample3">
+                    <li>Considering the heavy workload of individual developer, this plan tries NOT to change the main functions or interaction as much as possible, and not to add new ones. Personal improvement suggestions may be provided, but they do not serve as the optimization goal</li>
+                </ul>
+                <br>
+                <h2 class="sample2">How to optimize</h2>
+                <img src="work1-2.jpg" width="80%">
+                <ul class="sample3">
+                    <li>Combine personal use experience, other users' feedback, and App Store previous reviews to find goal and direction of this optimization</li>
+                    <br>
+                    <li>Analyze functions framework of this App, from the whole App to a single interface</li>
+                    <br>
+                    <li>Design low-fidelity prototypes, communicate with developer, and modify them</li>
+                    <br>
+                    <li>Take other English learning Apps as reference to improve interface design</li>
+                </ul>
+                <br>
+<!--Goals&Direction-->
+                <h1 class="sample1">Goal & Direction</h1>
+                <h2 class="sample2">App Store previous reviews</h2>
+                <img src="work1-3.jpg" width="80%">
+                <h2 class="sample2">Users' feedback</h2>
+                <p class="sample3">I did a simple interview with my three friends (Yang, Chen and Huang) who used this APP. Here are some records of this interview</p>
+                <ul class="sample3" style="color: #7EC282;"> 
+                    <li>Q1: Could you guys please tell me about your experience using dictionary of roots and affixes?</li>
+                </ul>
+                <p class="sample3" style="margin-left: 150px;"><b>Huang:</b> Well, it's really convenient and effective to search or learn words by roots and affixes. This is best characteristic of App. I like it. I don't mind interfaces at all. It works and it's not made by a professional group. So I think the design is ok.</p>
+                <p class="sample3" style="margin-left: 150px;"><b>Chen:</b> It's great, but the interfaces are really bad and ugly...</p>
+                <p class="sample3" style="margin-left: 150px;"><b>Yang:</b> This App is good. It would be better if it has more beautiful interfaces, I think. </p>
+                <ul class="sample3" style="color: #7EC282;"> 
+                    <li>Q2: Could you please tell me about the frequency of you use this App to read or practice?</li>
+                </ul>
+                <p class="sample3" style="margin-left: 150px;"><b>Huang:</b> Does this App have this function? Read? I don't know.</p>
+                <p class="sample3" style="margin-left: 150px;"><b>Chen:</b> No. I prefer to use other Apps, more professional ones.</p>
+                <p class="sample3" style="margin-left: 150px;"><b>Yang:</b> I don't, I use this App only for searching or learning words.</p>
+                <ul class="sample3" style="color: #7EC282;"> 
+                    <li>Q2: Is there any other English Learning Apps you guys usually use?</li>
+                </ul>
+                <p class="sample3" style="margin-left: 150px;"><b>Huang:</b> Oh yes, such as LeCi, MuoMuo. I use them mainly for examination. </p>
+                <p class="sample3" style="margin-left: 150px;"><b>Chen:</b> Xiaozhan Toefl, haha. The dictionary of roots and affixes App doesn't have enough learning resources. Now I basically don't use it.</p>
+                <p class="sample3" style="margin-left: 150px;"><b>Yang:</b> Xiaozhan. </p>
+
+                <h2 class="sample2">
+                    Summary
+                </h2>
+                <ul class="sample3">
+                    <li>
+                        Interfaces should have a better look
+                    </li>
+                    <br>
+                    <li>
+                        Functions framework needs to be modified
+                    </li>
+                    <br>
+                    <li>
+                        Considering the design of interfaces (layout, icons, etc.) is based on functions framework. Analyzing functions framework should be the first step. Then design low-fidelity prototypes. Finally, re-design interfaces
+                    </li>
+                </ul>
+<!--Functional Framework-->
+                <h1 class="sample1">Functions Framework</h1>
+                <h2 class="sample2-1">Analysis</h2>
+                <br>
+                <img src="work1-4.jpg" width="80%" style="align-content: center; border-radius: 20px; box-shadow: 0 0 20px rgb(0, 0, 0,0.1);">
+                <br>
+                <h2 class="sample2">Pros</h2>
+                <ul class="sample3">
+                    <li>The functions of this APP are comprehensive and basically meet users' needs. This also can be seen from the App Store reviews</li>
+                </ul>
+                <br>
+                <h2 class="sample2">Cons</h2>
+                <ul class="sample3">
+                    <li>In "personal info" section, there are study materials such as grammar. Besides, there is reading functions in "Settings" section. Obviously, they are not suitable for the part</li></ul>
+                    <img src="work1-25.jpg" width="65%" style="margin: 20px 0; align-content: center;">
+                    <ul class="sample3">
+                    <li>Both "Search Words" and "Roots & Affixes“ provide search function and they have similar interface. But we can see they are separated</li>               
+                </ul>
+                <img src="work1-29.jpg" width="63%" style="margin: 20px 0; align-content: center;">
+                <h2 class="sample2">Summary</h2>
+                <ol class="sample3" style="margin-left: 90px;">
+                        <li>The "Settings" section has more than 10 functions, while other sections just have less than seven functions. <span style="color:rgb(250,100,0,0.73)" ><strong>The distribution of functions is unbalanced</strong></span></li>
+                        <br>
+                        <li><span style="color:rgb(250,100,0,0.73)" ><strong>The classification of functions is not suitable.</strong></span> It would be difficult for users to find some functions. </li>
+                </ol>
+<!--Optimization-->
+                <h2 class="sample2-2">Optimization</h2>
+                <ol class="sample3" style="margin-left: 90px;">
+                    <li>Integrate "Search Words" and "Roots & Affixes"</li>
+                    <br>
+                    <li>Create a new section ("Learning Materials") for learning and reading functions.</li>
+                </ol>
+                <br>
+                <img src="work1-5.jpg" width="80%" style="align-content: center; border-radius: 20px; box-shadow: 0 0 20px rgb(0, 0, 0,0.1);">
+                <div style="background-color: white; padding: 55px;">
+                    <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                        <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">Before</p>
+                        <img src="work1-6.jpg" width="82%"style="border-radius: 20px; box-shadow: 0 0 20px rgb(0, 0, 0,0.1);">
+                    </div>
+                    <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                        <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">After</p>
+                        <img src="work1-7.jpg" width="82%"style="border-radius: 20px; box-shadow: 0 0 20px rgb(0, 0, 0,0.1); margin-bottom: 30px">
+                    </div>
+                </div>
+
+<!--low-fidelity prototypes-->
+                <div style="clear: both;">
+                    <div style="padding: 1px 0 0 0;">
+                        <h1 class="sample1">Low-fidelity Prototypes</h1>
+                        <ul class="sample3">
+                          <li>In addition to functions framework of the whole App, nearly every single interface has some problems that functions are not classified in a right way</li>
+                         <br>
+                          <li>In one page, focus of main functions is not obvious</li>
+                         <br>
+                          <li>Icons does not play a guiding role for users. These wrong icons reduce the speed and efficiency of information transmission, increasing user learning costs</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <h2 class="sample3">Here are 3 most frequently used and most modified interfaces. They would be used as cases to display my optimization plan</h2>
+                    <!--<ol class="sample3" style="margin-left: 50px;">
+                        <li>Learn words-home page</li>
+                        <br>
+                        <li>Learn words-learning page&other relative pages</li>
+                        <br>
+                        <li>Search-home page</li>
+                        <br>
+                        <li>Search-result page</li>
+                        <br>
+                        <li>Learning Materials (new section)</li>
+                    </ol>-->
+                    <br>
+<!--Case1-->
+                   <ul class="case" style="margin-left:60px;
+                   margin-bottom: 30px;
+                   font-size: 20px;
+                   color: rgb(0,0,0,0.75);
+                   text-align: left;
+                   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                       <li style="margin-top: 10px;">Case1 Learn words - Home Page</li>
+                   </ul>
+                   <h2 class="sample2-1">Analysis</h2>
+                   <div style="background-color: white; position: relative; top: -20px">
+                        <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                                <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">Interface</p>
+                                <img src="work1-8.jpg" width="45%"style="box-shadow: 0 0 20px rgb(0, 0, 0,0.1);">
+                        </div>
+                        <div style="width: 50%; height: auto; align-content: center; margin:20px 0; float: left; padding: 5px 0;">
+                                <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0; position: relative; left: 10px;">Framework</p>
+                                <img src="work1-9.jpg" width="100%" style="position: relative; left: -60px;">
+                        </div>
+                   </div>
+                   <div style="clear: both;">
+                        <ul class="sample3">
+                            <li>
+                                    There are two central points in the interface, which are "Learning progress-total 7268, learned 4" and "button-start". However, for this page, "Learning progress" is not the first important function
+                            </li>
+                            <br>
+                            <li>
+                                    Other products in the market prefer to divide "learn new words" function and "review old words" function into two parts. Users will have more freedom to decide whether to learn new words firstly or to review firstly
+                            </li>
+                            <br>
+                            <li>
+                                    "Set number of learning words", "Roots & Affixes", "Sequence" and "Random" are used to set learning model by users
+                            </li>
+                            <br>
+                            <li>
+                                    "Classification of roots & affixes", "High Frequency roots", and "250 roots" actually are different classification methods for roots and affixes. And these functions would not use frequently.
+                            </li>
+                            <br>
+                            <li>
+                                    "Word list" actually shows the learned words and new words, it is similar to "learning progress"
+                            </li>
+                            <br>
+                        </ul>
+                   </div>
+                   <h2 class="sample2-2">Optimization</h2>
+                   <ol class="sample3" style="margin-left: 90px;">
+                    <li>
+                        Integrate similar functions and re-plan the area and visual focus of different functions
+                    </li>
+                    <br>
+                    <li>
+                        According to re-designed functions framework, draw the low-fidelity prototype
+                    </li>
+                   </ol>
+                   <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 50px 0 20px 0;">Framework</p>
+                   <img src="work1-10.jpg" width="70%" style="align-content: center;">
+                   <br>
+                   <img src="narrow.jpg" width="10%" style="margin-top: 10px;">
+                   <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 30px 0;">Interface</p>
+                   <img src="work1-11.jpg" width="25%" style="align-content: center; box-shadow: 0 0 20px rgb(0, 0, 0,0.1); margin-bottom: 50px;">
+<!--Case2-->
+                   <ul class="case" style="margin-left:60px;
+                        margin-bottom: 30px;
+                        font-size: 20px;
+                        color: rgb(0,0,0,0.75);
+                        text-align: left;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                         <li style="margin-top: 10px;">Case 2 Learn words - Learning Page and Word Explanation Page</li>
+                        </ul>
+                    <h2 class="sample2-1">Analysis</h2>
+                    <img src="work1-12.jpg" width="70%" style="margin: 20px 0;">
+                    <ul class="sample3">
+                        <li>
+                                In order to jump from "Learning Page" to "Word Explanation Page", users can click on the blank space or the three function buttons below. However, there is no prompt to tell the user they could do that.
+                        </li>
+                        <br>
+                        <li>
+                                Click on the "roots or affixes" part would show "Roots & Affixes Choice Page", but there is no significant difference between the "roots or affixes" part and other parts.
+                        </li>
+                        <br>
+                        <li>
+                                Users could see more information about the word by clicking on it. But there is no prompt to guide users to do so
+                        </li>
+                        <br>
+                        <li>
+                                The information transmission efficiency of "Note" icon is extremely low. And it is not suitable to put the notes icon at "Learning page"
+                        </li>
+                    </ul>
+                    <h2 class="sample2-2">Optimization</h2>
+                    <ol class="sample3" style="margin-left: 90px;">
+                            <li>
+                                Add suitable prompt information on the interface
+                            </li>
+                            <br>
+                            <li>
+                                Re-plan the visual focus of the different functions on this interface
+                            </li>
+                    </ol>
+                    <div>
+                         <h2 class="sample3" style="margin-top: 30px;">Learning Page</h2>
+                         <p class="sample3">- Add "Click on the screen to see the word definition" message to the blank space</p>
+                         <div style="background-color: white; position: relative; top: -20px">
+                                 <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                                    <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">Before</p>
+                                    <img src="work1-13.jpg" width="50%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.1);">
+                                 </div>
+                                 <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                                    <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">After</p>
+                                    <img src="work1-14.jpg" width="50%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.1);">
+                                 </div>
+                         </div>
+                    </div>
+                    <!--<div style="clear: both;">
+                            <h2 class="sample3" style="margin-top: 50px;">Notes page</h2>
+                            <p class="sample3">- Improve the visual focus effect of tab switching for a better navigation</p>
+                            <div style="background-color: white; position: relative; top: -20px">
+                                  <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                                          <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">Before</p>
+                                          <img src="work1-15.jpg" width="63%">
+                                  </div>
+                                  <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                                          <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">After</p>
+                                          <img src="work1-16.jpg" width="63%">
+                                  </div>
+                            </div>
+                    </div>-->
+                    <div style="clear: both;">
+                            <h2 class="sample3" style="margin-top: 50px;">Word Explanation Page</h2>
+                            <p class="sample3">- Use different font-color for roots and affixes in order to guide users to pay attention and try to click</p>
+                            <p class="sample3">- Use some area of the page for "Notes". Users can view most popular or own notes and add new notes directly through this page</p>
+                            <p class="sample3">- Add a message and button at the bottom of this page to tell users they could see more information on this word by clicking on this small button</p>
+                            <div style="background-color: white; position: relative; top: -20px">
+                                  <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                                          <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">Before</p>
+                                          <img src="work1-17.jpg" width="62%">
+                                  </div>
+                                  <div style="width: 50%; height: auto; align-content: center; margin:20px 0px; float: left;">
+                                          <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); margin: 20px 0;">After</p>
+                                          <img src="work1-18.jpg" width="62%">
+                                  </div>
+                            </div>
+                    </div>
+                    <div style="clear: both;">
+                            <p class="sample2" style="color: #7EC282;">*Personal Suggestion</p>
+                            <ul class="sample3">
+                                <li>
+                                        It may be better to click on the "root and affix" to directly jump to the "root and affix details page". It could minus the user selection step, and the operating hot zone would not be too small or inconvenient.
+                                </li>
+                            </ul>
+                            <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); text-align: left; margin-left: 120px; margin-top: 50px;">Before</p>
+                            <img src="work1-21.jpg" width="80%">
+                            <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 14px; color: rgb(0,0,0,0.8); text-align: left; margin-left: 120px;">After</p>
+                            <img src="work1-22.jpg" width="53%" style="position: relative; left: -14%;">
+                    </div>
+                    <h2 class="sample2-1" style="margin: 30px 0;">Low-fidelity prototypes - "Learning Words" Flow Chart</h2>
+                    <img src="work1-23.jpg" width="80%" style="margin-bottom: 50px;">
+<!--Case3-->
+                    <ul class="case" style="margin-left:60px;
+                        margin-bottom: 30px;
+                        font-size: 20px;
+                        color: rgb(0,0,0,0.75);
+                        text-align: left;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                            <li style="margin-top: 10px;">Case3 Learning Materials (new section)</li>
+                        </ul>
+                    <h2 class="sample2-1" style="margin: 30px 0;">Analysis</h2>
+                    <p class="sample3" style="text-align: center;">Framework</p>
+                    <img src="work1-24.jpg" width="45%">
+                    <img src="work1-25.jpg" width="60%" style="margin-top: 30px;">
+                    <h2 class="sample2-2">Optimization</h2>
+                    <ol class="sample3" style="margin-left: 90px;">
+                            <li>
+                               Integrate these functions into the "Learning Materials" section
+                            </li>
+                            <br>
+                            <li>Classify these functions into "Words", "Grammar", "Examination Practice" and "Reading"</li>
+                            <br>
+                            <li>
+                                Use tab for switching sections
+                            </li>
+                    </ol>
+                    <img src="work1-30.jpg" width="50%" style="margin: 10px 0">
+                    <img src="work1-26.jpg" width="80%" style="margin-top: 30px;">
+<!--developer feedback-->
+                    <div style="clear: both; margin-top: 60px;">
+                        <h1 class="sample1" style="margin-top: 30px;">Developer's Feedback</h1>
+                        <p class="sample3">I sent my optimization plan to Mr. Weidong Gao and he gave some feedback. He agreed to create a new section for learning and reading. While he did not think that integrating "Search Words" and "Roots & Affixes" was a good idea. And there were more statistics for searching words, this function should be put in homepage.</p>
+                        <p class="sample3">We are still discussing the change of "Search" section. So, at this stage, I and Mr. Weidong Gao decide to optimize other sections interfaces firstly.</p>
+                        <img src="f3.jpg" width="80%">
+                        </div>
+<!--UI-->                    
+                    <h1 class="sample1">Interface Optimization (iOS)</h1> 
+                    <h2 class="sample2">Color Scheme </h2> 
+                    <ul class="sample3">
+                        <li>The original version just has green, white, black and grey. And the green is not active enough. Considering when learning English, users would like to be encouraged or feel pleased. A more active green and some orange would be better</li>
+                    </ul>
+                    <p class="sample3" style="text-align: center; margin-top: 30px;">Main Color</p> 
+                    <img src="work1-27.jpg" width="35%">
+                    <p class="sample3" style="text-align: center;">Auxiliary Color</p> 
+                    <img src="work1-28.jpg" width="55%" style="margin-bottom: 30px;">
+ 
+                    <h2 class="sample2" style="margin-top: 30px;">Learn words-Home age</h2>
+                    <div style="padding: 0 110px;">
+                        <div style="width: 50%; height: auto; align-content:center; float: left;">
+                            <p class="sample3" style="text-align: center;">Original Version</p>
+                            <img src="work1-8.jpg" width="60%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2);">
+                        </div>
+                        <div style="width: 50%; height: auto; align-content:center; float: left;">
+                            <p class="sample3" style="text-align: center;">Low-fidelity Prototype</p>
+                            <img src="work1-11.jpg" width="60%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2);">
+                        </div>
+                    </div>
+
+                    <!--<div style="clear: both; position: relative; top: 30px; padding: 0 20px;">
+                        <div style="width: 33%; height:auto; align-content: center; float: left; margin-right: 0; ">
+                            <p class="sample3" style="text-align: center; position: relative; left: 30px;">Version 1</p>
+                            <img src="plan1.jpg" width="60%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2); position: relative; left: 30px;">
+                        </div>
+                        <div style="width: 33%; height:auto; align-content: center; float: left;">
+                                <p class="sample3" style="text-align: center;">Version 2</p>
+                                <img src="plan2.jpg" width="60%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2);">
+                        </div>
+                        <div style="width: 33%; height:auto; align-content: center; float: left;margin-left: 0;">
+                                    <p class="sample3" style="text-align: center;position: relative; left: -30px;">Version 3</p>
+                                    <img src="plan4.jpg" width="60%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2);position: relative; left: -30px;">
+                        </div>
+                    </div>-->
+                    <div style="clear: both;">
+                        <br>
+                        <br>
+                    <ul class="sample3">
+                        <li>Version 1&nbsp;&nbsp;</li>
+                        <p class="sample3" style="margin: 30px 0px;">The difference between "Learn" and "Review" is not distinct. Additionally, this page has too much green. It would cause visual fatigue.</p>
+                    </ul>
+                    <img src="plan1.jpg" width="30%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2); margin-bottom: 20px; margin-top: 10px;">
+                    <ul class="sample3">  
+                    <li>Version 2&nbsp;&nbsp;</li>
+                        <p class="sample3" style="margin: 30px 0px;">The green for "Learn" is too dark, not active. It would be better to use brilliant color. <del>(After all, learning sometimes could be boring and painful)</del></p>
+                        </ul>
+                        <img src="plan2.jpg" width="30%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2); margin-bottom: 20px; margin-top: 10px;">
+                    <ul class="sample3">
+                        <li>Version 3&nbsp;&nbsp;</li>
+                        <p class="sample3" style="margin: 30px 0px;">Choose orange to make the page more colorful and active! Orange color is auxiliary color and would not make the page look strange. </p>
+                    </ul>
+                        <img src="plan4.jpg" width="30%" style="box-shadow: 0 0 20px rgb(0, 0, 0,0.2); margin-top: 10px;">
+
+                   </div>
+                   <br>
+                    <h2 class="sample2" style="margin-top: 30px; margin-bottom: 50px;">Other Pages</h2>
+                    <img src="UI.jpg" width="80%" style="margin-bottom: 60px; ">
+                </div> 
+            </div>
+            <br style="clear: both;"/>
+            <div>
+            <p style="text-align: center;
+             font-size: 16px;
+             color:darkgrey;
+             position: relative;
+             top: 80px;
+             line-height: 20px;">
+                Thanks for watching!
+                <br>
+                <br>
+                E-mail:qingqiuhan@gmail.com</p>
+            </div>
+        </div>   
+    </body>
+</html>
